@@ -23,26 +23,27 @@ export default function ArticleCard({ article }: ArticleCardProps) {
       : '/placeholder-cat.jpg';
 
   return (
-    <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-[1.02] transform">
-      <div className="relative h-48 w-full bg-gray-200">
+    <article className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+      <div className="relative h-56 w-full bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
         <Image
           src={imageUrl}
           alt={title || 'Article image'}
           fill
-          className="object-cover"
+          className="object-cover group-hover:scale-110 transition-transform duration-700"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       </div>
       <div className="p-6">
-        <div className="flex items-center gap-2 mb-3 flex-wrap">
+        <div className="flex items-center gap-2 mb-4 flex-wrap">
           <span
-            className={`text-xs font-semibold px-3 py-1 rounded-full ${
+            className={`text-xs font-bold px-4 py-1.5 rounded-full shadow-sm ${
               categoryColors[category] || categoryColors.general
             }`}
           >
             {category.replace('-', ' ').toUpperCase()}
           </span>
-          <span className="text-xs text-gray-500">
+          <span className="text-xs text-gray-500 font-medium">
             {new Date(publishDate).toLocaleDateString('en-US', {
               month: 'short',
               day: 'numeric',
@@ -50,17 +51,17 @@ export default function ArticleCard({ article }: ArticleCardProps) {
             })}
           </span>
         </div>
-        <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
+        <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
           {title}
         </h3>
-        <p className="text-gray-600 mb-4 line-clamp-3">{excerpt}</p>
+        <p className="text-gray-600 mb-5 line-clamp-3 leading-relaxed">{excerpt}</p>
         <Link
           href={`/articles/${slug}`}
-          className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center transition-colors"
+          className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold group/link"
         >
-          Read More
+          Read Article
           <svg
-            className="w-4 h-4 ml-1"
+            className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-300"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -69,7 +70,7 @@ export default function ArticleCard({ article }: ArticleCardProps) {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth={2}
-              d="M9 5l7 7-7 7"
+              d="M13 7l5 5m0 0l-5 5m5-5H6"
             />
           </svg>
         </Link>
