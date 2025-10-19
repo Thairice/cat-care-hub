@@ -15,7 +15,15 @@
       "Bash(npm run lint)",
       "Bash(npm run format -- --check)",
       "Bash(git init)",
-      "Bash(git add .)"
+      "Bash(git add .)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit - Next.js 14 project setup\n\n- Initialize Next.js 14.2.5 with TypeScript and Tailwind CSS 3.4\n- Set up monorepo structure with npm workspaces (apps/web, packages/shared)\n- Configure ESLint and Prettier for code quality\n- Add environment variable template (.env.example)\n- Create comprehensive README with setup instructions\n\nStory: 1.1\nEOF\n)\")",
+      "Bash(git config user.name \"Developer\")",
+      "Bash(git config user.email \"dev@cat-care-hub.local\")",
+      "Bash(git remote add origin https://github.com/Thairice/cat-care-hub.git)",
+      "Bash(git branch -M main)",
+      "Bash(git push -u origin main)",
+      "Read(//c/tmp/**)",
+      "Bash(npm install contentful)"
     ],
     "deny": [],
     "ask": []
