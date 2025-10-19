@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "SlashCommand(/BMad:agents:pm)",
+      "SlashCommand(/BMad:agents:dev)",
+      "Bash(npx create-next-app@latest cat-care-hub --typescript --tailwind --app --eslint --no-src-dir --import-alias \"@/*\")",
+      "Bash(cat package.json)",
+      "Bash(timeout 15 npm run dev)",
+      "Bash(npm install)",
+      "Bash(timeout 10 npm run dev)",
+      "Bash(npm install --save-dev prettier eslint-config-prettier)",
+      "Bash(npm run format)",
+      "Bash(npm run build)",
+      "Bash(tree -L 3 -I 'node_modules|.next' --dirsfirst)",
+      "Bash(npm run lint)",
+      "Bash(npm run format -- --check)",
+      "Bash(git init)",
+      "Bash(git add .)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
