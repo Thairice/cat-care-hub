@@ -11,7 +11,7 @@ export interface ArticleFields {
 }
 
 export interface ArticleSkeleton extends EntrySkeletonType {
-  contentTypeId: 'article';
+  contentTypeId: 'catCareHub';
   fields: ArticleFields;
 }
 

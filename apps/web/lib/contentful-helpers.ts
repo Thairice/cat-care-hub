@@ -4,7 +4,7 @@ import { ArticleEntry } from '@/types/contentful';
 export async function getAllArticles(): Promise<ArticleEntry[]> {
   try {
     const response = await contentfulClient.getEntries({
-      content_type: 'article',
+      content_type: 'catCareHub',
       order: ['-fields.publishDate'],
     });
     return response.items as ArticleEntry[];
@@ -17,7 +17,7 @@ export async function getAllArticles(): Promise<ArticleEntry[]> {
 export async function getArticleBySlug(slug: string): Promise<ArticleEntry | null> {
   try {
     const response = await contentfulClient.getEntries({
-      content_type: 'article',
+      content_type: 'catCareHub',
       'fields.slug': slug,
       limit: 1,
     });
