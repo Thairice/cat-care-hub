@@ -23,7 +23,13 @@
       "Bash(git branch -M main)",
       "Bash(git push -u origin main)",
       "Read(//c/tmp/**)",
-      "Bash(npm install contentful)"
+      "Bash(npm install contentful)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAdd Contentful integration and home page layout\n\n- Install Contentful SDK and configure client\n- Create TypeScript types for Article, Product, Gallery content models\n- Add Contentful helper functions to fetch articles\n- Create Header component with navigation\n- Create Footer component\n- Create ArticleCard component with responsive design\n- Update home page with hero section and article grid\n- Add test page for Contentful integration\n\nStories: 1.3, 1.4, 1.5, 1.6\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push origin main)",
+      "Bash(node scripts/check-contentful.js)",
+      "Bash(git add apps/web/lib/contentful-helpers.ts apps/web/types/contentful.ts)",
+      "Bash(git commit -m \"Fix Contentful content type identifier to catCareHub\n\n- Update contentful-helpers.ts to use correct content type ID\n- Update contentful.ts type definition\n- This fixes the article display issue on production\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\")",
+      "Bash(npm install @contentful/rich-text-react-renderer @contentful/rich-text-types)"
     ],
     "deny": [],
     "ask": []
